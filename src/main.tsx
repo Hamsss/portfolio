@@ -41,7 +41,7 @@ function App() {
       <div className="hero-top"><p>AI RESEARCHER / DATA SCIENCE</p><p>NEW YORK · SEOUL</p></div>
       <div className="hero-main">
         <h1>Structured thinking<br />for <em>connected</em> data.</h1>
-        <div className="hero-copy"><span className="lime-dot" /><p>I work on graph learning and AI systems that make complex relationships legible, robust, and useful.</p><small>Incoming M.S. in Data Science<br />New York University · 2026–2028</small></div>
+        <div className="hero-copy"><span className="lime-dot" /><p>I study the fundamental relationships within data, then translate them into efficient models for real-world use.</p><small>Incoming M.S. in Data Science<br />New York University · 2026–2028</small></div>
       </div>
       <div className="topic-bar"><span>GRAPH NEURAL NETWORKS</span><span>GRAPHRAG</span><span>KNOWLEDGE GRAPHS</span><span>DATA EMBEDDING</span></div>
     </section>
@@ -65,7 +65,7 @@ function App() {
     <section id="profile" className="section shell profile">
       <div className="section-title"><p>03 / PROFILE</p><h2>Training & practice</h2></div>
       <div className="profile-grid">
-        <p className="profile-statement">My path into AI began with a simple question: how does an autonomous system read a changing world and decide what to do next? That curiosity now guides my work across graphs, language, vision, and data systems.</p>
+        <p className="profile-statement">I want to understand the fundamental relationships between data and turn that understanding into efficient, practical models. My work is not limited to language models: I am interested in choosing and designing the right model for the structure of a real-world problem.</p>
         <div className="credentials">
           <div><span>EDUCATION</span><p><strong>M.S. Data Science</strong><br />New York University<br /><small>2026–2028 · Expected</small></p><p><strong>M.S. Artificial Intelligence</strong><br />Korea Aerospace University<br /><small>2024–2026</small></p><p><strong>B.S. Software & Computer Engineering</strong><br />Korea Aerospace University<br /><small>2022–2024</small></p></div>
           <div><span>MENTORING & SERVICE</span><p><strong>Research mentor & teaching assistant</strong><br /><small>Korea Aerospace University · 2023–2025</small></p><p>Mentored capstone teams and supported AI programming and deep-learning courses.</p><p><strong>Republic of Korea Army Sergeant</strong><br /><small>Honorable discharge · 2017–2019</small></p></div>
