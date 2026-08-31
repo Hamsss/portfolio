@@ -65,7 +65,7 @@ function App() {
     <section id="profile" className="section shell profile">
       <div className="section-title"><p>03 / PROFILE</p><h2>Training & practice</h2></div>
       <div className="profile-grid">
-        <p className="profile-statement">I want to understand the fundamental relationships between data and turn that understanding into efficient, practical models. My work is not limited to language models: I am interested in choosing and designing the right model for the structure of a real-world problem.</p>
+        <div className="direction-card"><span>RESEARCH DIRECTION</span><h3>Data relationships<br /><em>→ practical models.</em></h3><p>I uncover the relationships that shape data, then use them to design efficient models for real use — whether the right tool is a language, graph, vision, or another model entirely.</p></div>
         <div className="credentials">
           <div><span>EDUCATION</span><p><strong>M.S. Data Science</strong><br />New York University<br /><small>2026–2028 · Expected</small></p><p><strong>M.S. Artificial Intelligence</strong><br />Korea Aerospace University<br /><small>2024–2026</small></p><p><strong>B.S. Software & Computer Engineering</strong><br />Korea Aerospace University<br /><small>2022–2024</small></p></div>
           <div><span>MENTORING & SERVICE</span><p><strong>Research mentor & teaching assistant</strong><br /><small>Korea Aerospace University · 2023–2025</small></p><p>Mentored capstone teams and supported AI programming and deep-learning courses.</p><p><strong>Republic of Korea Army Sergeant</strong><br /><small>Honorable discharge · 2017–2019</small></p></div>
