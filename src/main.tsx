@@ -1,110 +1,81 @@
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-type Link = { label: string; href: string };
-
-const research = [
+const papers = [
   {
-    date: '2026',
-    kind: 'JOURNAL ARTICLE',
+    year: '2026',
+    venue: 'MACHINE LEARNING',
     title: 'TRAIL: Trajectory-Based Representation and Integration for Limiting Over-Smoothing',
-    description: 'A trajectory-aware representation and integration method for retaining useful graph structure as models deepen.',
-    links: [
-      { label: 'Journal', href: 'https://www.doi.org/10.1007/s10994-026-07015-z' },
-      { label: 'Code', href: 'https://github.com/Hamsss/TRAIL' },
-    ],
+    copy: 'A trajectory-aware graph representation method for preserving useful structural information as graph models deepen.',
+    links: [['Paper', 'https://www.doi.org/10.1007/s10994-026-07015-z'], ['Code', 'https://github.com/Hamsss/TRAIL']],
   },
   {
-    date: '2026',
-    kind: 'CONFERENCE PAPER',
+    year: '2026',
+    venue: 'AISTATS',
     title: 'TESLA: Taylor Expansion of Sinusoidal Learnable Activations',
-    description: 'An investigation of expressive learnable activation functions for neural networks. Presented at AISTATS 2026.',
-    links: [{ label: 'Preprint', href: 'https://arxiv.org/pdf/2608.11970' }],
+    copy: 'Research on learnable sinusoidal activations for more expressive neural networks.',
+    links: [['Preprint', 'https://arxiv.org/pdf/2608.11970']],
   },
 ];
 
-const systems = [
-  {
-    title: 'Won HANA',
-    context: 'Financial Supervisory Service Governor’s Award · 2023',
-    description: 'ESG hyper-personalization for mutual-growth finance: content understanding, financial recommendation, and safeguards against manipulated children’s images.',
-    href: 'https://github.com/wonHANANA',
-  },
-  {
-    title: 'University information chatbot',
-    context: 'Industry-Academia R&D Grand Prize · 2023',
-    description: 'A campus assistant built with ChatGPT and Llama, scheduled web crawling, multilingual preprocessing, and Chroma vector retrieval.',
-    href: 'https://github.com/orgs/HangaPeople/repositories',
-  },
-  {
-    title: 'Sreop community intelligence',
-    context: 'Applied AI project · 2023',
-    description: 'Comment moderation with BERT and apparel classification with YOLOv8 for a celebrity-item community service.',
-    href: 'https://github.com/CELEBIT',
-  },
+const projects = [
+  { number: '01', title: 'Won HANA', label: 'FSS Governor’s Grand Prize · 2023', copy: 'ESG hyper-personalization for financial services, combining content understanding, recommendation, and safeguards against manipulated children’s images.', href: 'https://github.com/wonHANANA' },
+  { number: '02', title: 'University chatbot', label: 'Industry-Academia Grand Prize · 2023', copy: 'A retrieval-augmented campus assistant built with ChatGPT, Llama, scheduled web crawling, multilingual preprocessing, and ChromaDB.', href: 'https://github.com/orgs/HangaPeople/repositories' },
+  { number: '03', title: 'Vision systems', label: 'Applied AI · 2022–2024', copy: 'Thermal surveillance with YOLOv5/YOLOv7 and image-based bird recognition and description assistance.', href: 'https://github.com/CELEBIT' },
+  { number: '04', title: 'Sreop intelligence', label: 'Community AI · 2023', copy: 'BERT moderation and YOLOv8 apparel classification for a celebrity-item information community.', href: 'https://github.com/CELEBIT' },
 ];
 
-function ExternalLink({ link }: { link: Link }) {
-  return <a className="external-link" href={link.href} target="_blank" rel="noreferrer">{link.label}<span aria-hidden="true">↗</span></a>;
+function Link({ label, href }: { label: string; href: string }) {
+  return <a href={href} target="_blank" rel="noreferrer">{label} <span>↗</span></a>;
 }
 
 function App() {
-  return (
-    <main>
-      <header className="site-header shell">
-        <a className="monogram" href="#top" aria-label="Seunghyun Ham home">S<span>H</span></a>
-        <nav aria-label="Main navigation"><a href="#research">Research</a><a href="#systems">Systems</a><a href="#profile">Profile</a></nav>
-        <a className="contact-link" href="mailto:gka304@gmail.com">gka304@gmail.com</a>
-      </header>
+  return <main>
+    <header className="header shell">
+      <a href="#top" className="wordmark">SEUNGHYUN <b>HAM</b></a>
+      <nav aria-label="Primary"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#profile">Profile</a></nav>
+      <a className="mail" href="mailto:sh9109@nyu.edu">sh9109@nyu.edu</a>
+    </header>
 
-      <section id="top" className="hero shell">
-        <p className="kicker">SEUNGHYUN HAM / AI RESEARCHER</p>
-        <div className="hero-grid">
-          <h1>Graph learning,<br /><i>carefully</i> pursued.</h1>
-          <div className="hero-note">
-            <span className="rule" />
-            <p>I investigate how graph neural networks preserve information, represent structure, and become more reliable in the problems they are asked to solve.</p>
-            <p className="hero-affiliation">Quantum Artificial Intelligence Laboratory<br />Korea Aerospace University</p>
-          </div>
+    <section id="top" className="hero shell">
+      <div className="hero-top"><p>AI RESEARCHER / DATA SCIENCE</p><p>NEW YORK · SEOUL</p></div>
+      <div className="hero-main">
+        <h1>Structured thinking<br />for <em>connected</em> data.</h1>
+        <div className="hero-copy"><span className="lime-dot" /><p>I work on graph learning and AI systems that make complex relationships legible, robust, and useful.</p><small>Incoming M.S. in Data Science<br />New York University · 2026–2028</small></div>
+      </div>
+      <div className="topic-bar"><span>GRAPH NEURAL NETWORKS</span><span>GRAPHRAG</span><span>KNOWLEDGE GRAPHS</span><span>DATA EMBEDDING</span></div>
+    </section>
+
+    <section className="manifesto"><div className="shell"><span>FIELD NOTE / 01</span><p>Better models do not only learn patterns. They retain the relations that give those patterns meaning.</p><a href="https://github.com/KAU-QuantumAILab" target="_blank" rel="noreferrer">Quantum AI Lab ↗</a></div></section>
+
+    <section id="research" className="section shell">
+      <div className="section-title"><p>01 / RESEARCH</p><h2>Published work</h2><span>Graph learning, neural representation, and effective information propagation.</span></div>
+      <div className="paper-list">{papers.map((paper) => <article className="paper" key={paper.title}>
+        <div className="paper-meta"><b>{paper.year}</b><span>{paper.venue}</span></div><div><h3>{paper.title}</h3><p>{paper.copy}</p></div><div className="paper-links">{paper.links.map(([label, href]) => <Link key={label} label={label} href={href} />)}</div>
+      </article>)}</div>
+    </section>
+
+    <section id="projects" className="section project-section"><div className="shell">
+      <div className="section-title"><p>02 / PROJECTS</p><h2>Applied systems</h2><span>Research translated into practical, user-facing AI.</span></div>
+      <div className="project-grid">{projects.map((project) => <article className="project" key={project.title}>
+        <div className="project-head"><b>{project.number}</b><span>{project.label}</span></div><h3>{project.title}</h3><p>{project.copy}</p><Link label="View project" href={project.href} />
+      </article>)}</div>
+    </div></section>
+
+    <section id="profile" className="section shell profile">
+      <div className="section-title"><p>03 / PROFILE</p><h2>Training & practice</h2></div>
+      <div className="profile-grid">
+        <p className="profile-statement">My path into AI began with a simple question: how does an autonomous system read a changing world and decide what to do next? That curiosity now guides my work across graphs, language, vision, and data systems.</p>
+        <div className="credentials">
+          <div><span>EDUCATION</span><p><strong>M.S. Data Science</strong><br />New York University<br /><small>2026–2028 · Expected</small></p><p><strong>M.S. Artificial Intelligence</strong><br />Korea Aerospace University<br /><small>2024–2026</small></p><p><strong>B.S. Software & Computer Engineering</strong><br />Korea Aerospace University<br /><small>2022–2024</small></p></div>
+          <div><span>MENTORING & SERVICE</span><p><strong>Research mentor & teaching assistant</strong><br /><small>Korea Aerospace University · 2023–2025</small></p><p>Mentored capstone teams and supported AI programming and deep-learning courses.</p><p><strong>Republic of Korea Army Sergeant</strong><br /><small>Honorable discharge · 2017–2019</small></p></div>
         </div>
-        <div className="hero-footer"><span>SEOUL · REPUBLIC OF KOREA</span><span>FOCUS: GNN / REPRESENTATION / KNOWLEDGE GRAPHS</span></div>
-      </section>
+      </div>
+      <div className="toolkit"><span>TOOLKIT</span><p>Python · PyTorch · PyG · TensorFlow · scikit-learn · Docker · NumPy · Pandas · R · C++</p><span>Korean / English / Chinese</span></div>
+    </section>
 
-      <section className="statement"><div className="shell"><p>Researching the paths information takes — and the structure it must not lose.</p><a href="https://github.com/KAU-QuantumAILab" target="_blank" rel="noreferrer">Quantum AI Lab <span>↗</span></a></div></section>
-
-      <section id="research" className="section shell">
-        <div className="section-heading"><p className="kicker">01 / RESEARCH</p><h2>Selected publications</h2></div>
-        <div className="research-list">
-          {research.map((item) => <article className="research-item" key={item.title}>
-            <div className="research-date"><span>{item.date}</span><small>{item.kind}</small></div>
-            <div><h3>{item.title}</h3><p>{item.description}</p></div>
-            <div className="link-stack">{item.links.map((link) => <ExternalLink key={link.label} link={link} />)}</div>
-          </article>)}
-        </div>
-      </section>
-
-      <section id="systems" className="section section-tint"><div className="shell">
-        <div className="section-heading"><p className="kicker">02 / APPLIED SYSTEMS</p><h2>Research in practice</h2></div>
-        <div className="system-grid">{systems.map((item, index) => <article className="system-card" key={item.title}>
-          <span className="card-number">0{index + 1}</span><p className="card-context">{item.context}</p><h3>{item.title}</h3><p className="card-description">{item.description}</p><a href={item.href} target="_blank" rel="noreferrer">View project <span>→</span></a>
-        </article>)}</div>
-      </div></section>
-
-      <section id="profile" className="section shell profile">
-        <div className="section-heading"><p className="kicker">03 / PROFILE</p><h2>A deliberate change of direction</h2></div>
-        <div className="profile-grid">
-          <p className="profile-lead">A campus delivery robot first made me curious about how intelligent systems sense, decide, and adapt. That question redirected my studies toward software engineering and became the foundation of my research practice.</p>
-          <div className="facts">
-            <div><span>EDUCATION</span><p>M.S. in Artificial Intelligence<br />Korea Aerospace University<br /><small>2024–2026</small></p><p>B.S. in Software & Computer Engineering<br />Korea Aerospace University<br /><small>2022–2024</small></p></div>
-            <div><span>MENTORING</span><p>Research mentor and teaching assistant<br /><small>Software & Computer Engineering, KAU · 2023–2025</small></p><p>Mentored capstone teams in AI programming and deep learning.</p></div>
-          </div>
-        </div>
-        <div className="competencies"><span>METHODS & TOOLS</span><p>Python · PyTorch · PyG · TensorFlow · scikit-learn · Docker · R · C++</p></div>
-      </section>
-
-      <footer className="site-footer"><div className="shell"><p className="kicker">OPEN TO THOUGHTFUL COLLABORATION</p><a href="mailto:gka304@gmail.com">gka304@gmail.com <span>↗</span></a><div className="footer-line"><span>© 2026 SEUNGHYUN HAM</span><a href="https://github.com/Hamsss" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
-    </main>
-  );
+    <footer><div className="shell"><p>AVAILABLE FOR RESEARCH CONVERSATIONS</p><a href="mailto:sh9109@nyu.edu">sh9109@nyu.edu <span>↗</span></a><div><span>© 2026 SEUNGHYUN HAM</span><a href="https://github.com/Hamsss" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
+  </main>;
 }
 
 createRoot(document.getElementById('root')!).render(<App />);
