@@ -52,3 +52,53 @@ footer > div > div { font-size: 11px; }
   .direction-card h3 { font-size: 33px; }
   .direction-card p { font-size: 14px; }
 }
+
+/* Refinement pass: clearer hierarchy, resilient layouts, and keyboard access */
+body { min-width: 320px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.skip-link { position: fixed; top: 12px; left: 12px; z-index: 10; padding: 10px 14px; color: #fff; background: var(--ink); font-size: 13px; font-weight: 700; transform: translateY(-160%); transition: transform .18s ease; }
+.skip-link:focus { transform: translateY(0); outline: 3px solid #b9c5ff; outline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--violet); outline-offset: 4px; }
+.hero { min-height: 520px; }
+.hero-main { gap: clamp(42px, 5vw, 72px); }
+.hero-copy p { max-width: 315px; }
+.manifesto > div { min-height: 136px; }
+.section-title h2, .project h3, .paper h3, .direction-card h3 { text-wrap: balance; }
+.paper { transition: background .18s ease, padding-left .18s ease; }
+@media (hover: hover) {
+  .paper:hover { padding-left: 12px; background: rgba(233, 235, 251, .36); }
+  .paper-links a:hover, .project > a:hover, .manifesto a:hover { border-color: var(--violet); }
+}
+
+@media (max-width: 1080px) {
+  .shell { width: min(100% - 48px, 1280px); }
+  .hero-main { grid-template-columns: 1.12fr .88fr; }
+  .section-title { grid-template-columns: 150px minmax(0, 1fr) 225px; gap: 22px; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .project { min-height: 250px; }
+  .profile-grid { gap: 48px; }
+  .toolkit { grid-template-columns: 155px minmax(0, 1fr) 145px; }
+}
+
+@media (max-width: 800px) {
+  .hero { min-height: 0; padding-bottom: 24px; }
+  .hero-main { gap: 28px; padding: 48px 0; }
+  .hero-copy { max-width: 350px; padding: 0; }
+  .hero-copy p { font-size: 16px; }
+  .hero-copy small { margin-top: 18px; }
+  .manifesto > div { min-height: 0; padding: 31px 0; }
+  .paper { padding: 25px 0 29px; }
+  .paper:hover { padding-left: 0; }
+  .paper h3 { font-size: 24px; }
+  .paper-links { margin-top: 2px; }
+  .project { min-height: 236px; padding: 23px; }
+  .project h3 { font-size: 29px; }
+  .project p { margin-bottom: 20px; }
+  .section-title > span { max-width: 430px; }
+  .direction-card { max-width: none; }
+  footer > div > div { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
