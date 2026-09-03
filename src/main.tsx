@@ -31,6 +31,7 @@ function Link({ label, href }: { label: string; href: string }) {
 
 function App() {
   return <main>
+    <a className="skip-link" href="#research">Skip to research</a>
     <header className="header shell">
       <a href="#top" className="wordmark">SEUNGHYUN <b>HAM</b></a>
       <nav aria-label="Primary"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#profile">Profile</a></nav>
@@ -41,7 +42,7 @@ function App() {
       <div className="hero-top"><p>AI RESEARCHER / DATA SCIENCE</p><p>NEW YORK · SEOUL</p></div>
       <div className="hero-main">
         <h1>Structured thinking<br />for <em>connected</em> data.</h1>
-        <div className="hero-copy"><span className="lime-dot" /><p>I study the fundamental relationships within data, then translate them into efficient models for real-world use.</p><small>Incoming M.S. in Data Science<br />New York University · 2026–2028</small></div>
+        <div className="hero-copy"><span className="lime-dot" /><p>I trace the relationships in data, then turn them into useful, efficient models.</p><small>Incoming M.S. in Data Science<br />New York University · 2026–2028</small></div>
       </div>
       <div className="topic-bar"><span>GRAPH NEURAL NETWORKS</span><span>GRAPHRAG</span><span>KNOWLEDGE GRAPHS</span><span>DATA EMBEDDING</span></div>
     </section>
@@ -65,7 +66,7 @@ function App() {
     <section id="profile" className="section shell profile">
       <div className="section-title"><p>03 / PROFILE</p><h2>Training & practice</h2></div>
       <div className="profile-grid">
-        <div className="direction-card"><span>RESEARCH DIRECTION</span><h3>Data relationships<br /><em>→ practical models.</em></h3><p>I uncover the relationships that shape data, then use them to design efficient models for real use — whether the right tool is a language, graph, vision, or another model entirely.</p></div>
+        <div className="direction-card"><span>RESEARCH DIRECTION</span><h3>Data relationships<br /><em>→ applied models.</em></h3><p>I uncover the structure that shapes data, then select or design the most effective model for the problem — language, graph, vision, or otherwise.</p></div>
         <div className="credentials">
           <div><span>EDUCATION</span><p><strong>M.S. Data Science</strong><br />New York University<br /><small>2026–2028 · Expected</small></p><p><strong>M.S. Artificial Intelligence</strong><br />Korea Aerospace University<br /><small>2024–2026</small></p><p><strong>B.S. Software & Computer Engineering</strong><br />Korea Aerospace University<br /><small>2022–2024</small></p></div>
           <div><span>MENTORING & SERVICE</span><p><strong>Research mentor & teaching assistant</strong><br /><small>Korea Aerospace University · 2023–2025</small></p><p>Mentored capstone teams and supported AI programming and deep-learning courses.</p><p><strong>Republic of Korea Army Sergeant</strong><br /><small>Honorable discharge · 2017–2019</small></p></div>
